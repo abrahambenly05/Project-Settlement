@@ -4,10 +4,6 @@ Website untuk mengekstrak keypoint dari dokumen absensi karyawan dalam bentuk PD
 
 > **Catatan:** Seluruh data pada `Absensi PT Nusatama Teknologi.pdf` adalah **data fiktif (dummy)**. Nama orang, perusahaan, NPP, dan project tidak merujuk pada pihak sebenarnya.
 
-## Tampilan
-
-![Tampilan web Extract Keypoint Absensi](screenshot.png)
-
 ## Fitur
 
 - Deteksi otomatis tipe dokumen per halaman: **Timesheet**, **Form Lembur**, **Berita Acara**, **DigiHC**
@@ -34,8 +30,7 @@ Website untuk mengekstrak keypoint dari dokumen absensi karyawan dalam bentuk PD
 ├── index.html         # Frontend
 ├── style.css
 ├── script.js
-├── Absensi PT Nusatama Teknologi.pdf   # Contoh dokumen (dummy)
-└── screenshot.png                      # Tangkapan layar website
+└── Absensi PT Nusatama Teknologi.pdf   # Contoh dokumen (dummy)
 ```
 
 ## Instalasi
