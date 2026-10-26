@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <title>Project Settlement</title>
+</head>
+<body>
+<div class="wrap">
+    
+    <!-- Upload Card -->
+    <div class="card">
+        <h1>Extract Keypoint Absensi</h1>
+        <p class="sub">Upload a PDF document</p>
+
+        <div class="endpoint-row">
+            <span>Endpoint API</span>
+            <input id="api-url" type="text" value="http://127.0.0.1:8000/keypoints">
+        </div>
+
+        <div id="dropzone">
+            <div class="dz-icon">
+                <svg viewBox="0 0 64 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 4h30l14 14v46a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Z" stroke="#2F80ED" stroke-width="2.4"/>
+                    <path d="M40 4v14h14" stroke="#2F80ED" stroke-width="2.4"/>
+                    <path d="M32 34v20M22 44h20" stroke="#2F80ED" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <p>Drag the file here or <button type="button" class="browse-link" id="browse-btn">search</button> your file</p>
+            <input id="file-input" type="file" accept="application/pdf">
+        </div>
+
+        <div class="file-row hidden" id="file-row">
+            <div class="ficon">PDF</div>
+            <div class="fbody">
+                <div class="frow-top">
+                    <div class="fname" id="fc-name"></div>
+                    <div class="fsize" id="fc-size"></div>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="fstatus" id="fstatus">Ready to upload</div>
+            </div>
+        </div>
+        
+        <div class="actions-row hidden" id="actions-row">
+            <button type="button" class="btn btn-primary" id="process-btn">Process Document</button>
+            <button type="button" class="btn btn-ghost" id="cancel-btn">Change File</button>
+        </div>
+    </div>
+    
+    <!-- Error Card -->
+    <div class="card hidden" id="error-card">
+        <div class="error-box" id="error-box"></div>
+    </div>
+    
+    <!-- Result Card-->
+    <div class="card hidden" id="result-card">
+        <div class="result-head">
+            <div class="badge-ok" id="badge-ok">✓ Processing Complete</div>
+            <div class="result-file" id="result-file"></div>
+            <div class="result-vendor" id="result-vendor"></div>
+            <div class="chips" id="result-chips"></div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-panel="panel-halaman">Per Halaman</button>
+            <button class="tab" data-panel="panel-pegawai">Per Pegawai</button>
+        </div>
+
+        <div class="panel active" id="panel-halaman">
+            <table>
+                <thead>
+                    <tr><th>Hal.</th><th>Tipe</th><th>Nama</th><th>Periode</th><th>Keypoint</th></tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+
+        <div class="panel" id="panel-pegawai">
+            <div id="employee-list"></div>
+        </div>
+
+        <div class="actions-row">
+            <button type="button" class="btn btn-ghost" id="reset-btn">Other Document Processing</button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+ALLOWED_CONTENT_TYPES = {"application/pdf"}
